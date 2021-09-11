@@ -1,10 +1,17 @@
-import skinApply #skin apply script, to send requests to mojang's api to skin change
-import skinGen #skin gen script, to generate skins from the image
-from time import sleep #import sleep from time, to add cooldowns
-from requests import post #import post requests from requests, to make skin change requests
-from keyboard import press_and_release,is_pressed #import keyboard module functions, for simulating control+r presses, and enabling an exit command
-from webbrowser import open #for opening the namemc profile in a browser, to cache skins on namemc
-from MsAuth import login #for logging into microsoft accounts
+#skin apply script, to send requests to mojang's api to skin change:
+import skinApply
+#skin gen script, to generate skins from the image:
+import skinGen
+#import sleep from time, to add cooldowns:
+from time import sleep
+#import post requests from requests, to make skin change requests:
+from requests import post
+#import keyboard for simulating control+r presses, and enabling an exit command:
+from keyboard import press_and_release,is_pressed
+#for opening the namemc profile in a browser, to cache skins on namemc:
+from webbrowser import open
+#for logging into microsoft accounts:
+from MsAuth import login
 
 ign = None #ign will later be stored in this variable
 
@@ -39,32 +46,38 @@ def promptUser():
             break
         else:
             #if it isn't, have them try again
-            print("Please try again, the options for skin style are \"slim\" or \"classic\".")
+            print("Please try again, the options are \"slim\" or \"classic\".")
 
     #confirm the user's choices
     print("Setting up auto-apply bot with email \""+email+"\"...\n")
-    print("Once started, chrome will open and close multiple times, to cache the skins in NameMC")
+    print("Once started, your browswer will open, to cache skins on NameMC")
     print("Do not stop the script until all skins have been applied.")
     print("This process will take 5-10 minutes or so.")
     print("\nThis program will simulate control+r keypresses.")
     print("To stop the program at any point, press control+space\n")
     input("Press [Enter] to start")
 
-#get a bearer to a mojang account with username+pass
+#auth an account
+#requires email+password of the account, and works for microsoft or mojang accounts
+#also sets the global "ign" variable to the ign of the account, if unset already
+#returns the account's bearer
 def auth(email,password):
     global ign
-    
+
     try:
         #make a change skin request, and store the data
-        authRequest = post("https://authserver.mojang.com/authenticate", json={"agent": {"name": "Minecraft", "version": 1}, "username": email,"password": password}).json()
-        if ign == None: #if the ign has not been set yet, grab it from the request data
+        authRequest = post(
+        "https://authserver.mojang.com/authenticate",
+        json={"agent": {"name": "Minecraft", "version": 1},
+         "username": email,"password": password}).json()
+        if ign == None: #if the ign has not been set yet, grab from request data
             ign = authRequest['selectedProfile']['name']
             print("ign was detected to be \""+ign+"\"\n")
         bearer = authRequest['accessToken']
         return bearer #return the bearer obtained via the request
-    except KeyError:	
+    except KeyError:
         authRequest = login(email,password)
-        if ign == None: #if the ign has not been set yet, grab it from the request data
+        if ign == None: #if the ign has not been set yet, grab from request data
             ign = authRequest['username']
             print("ign was detected to be \""+ign+"\"\n")
         bearer = authRequest['access_token']
