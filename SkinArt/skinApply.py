@@ -20,7 +20,9 @@ def changeSkin(style,num,bearer):
     #and if it isn't, try again (max 3 attempts)
     attempt = 0
     while True: #try to change skin 3 times, or break on success
-        req = requests.post(url="https://api.minecraftservices.com/minecraft/profile/skins",headers=headers,files=files).status_code
+        #req is a variable that stores the status code for a skin change request
+        req = requests.post(url="https://api.minecraftservices.com/minecraft/profile/skins",
+        headers=headers,files=files).status_code
         if req == 200:
             break #skin change succeded, so break
         else:

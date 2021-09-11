@@ -1,17 +1,10 @@
-#skin apply script, to send requests to mojang's api to skin change:
-import skinApply
-#skin gen script, to generate skins from the image:
-import skinGen
-#import sleep from time, to add cooldowns:
-from time import sleep
-#import post requests from requests, to make skin change requests:
-from requests import post
-#import keyboard for simulating control+r presses, and enabling an exit command:
-from keyboard import press_and_release,is_pressed
-#for opening the namemc profile in a browser, to cache skins on namemc:
-from webbrowser import open
-#for logging into microsoft accounts:
-from MsAuth import login
+import skinApply #to send requests to mojang's api to skin change
+import skinGen #skin gen script, to generate skins from the image
+from time import sleep #import sleep from time, to add cooldowns
+from requests import post #to make skin change requests
+from keyboard import press_and_release,is_pressed #simulate control+r presses
+from webbrowser import open #for opening the namemc profile in a browser
+from MsAuth import login #for logging into microsoft accounts
 
 ign = None #ign will later be stored in this variable
 

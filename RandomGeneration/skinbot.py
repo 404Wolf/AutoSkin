@@ -1,10 +1,9 @@
-from PIL import Image
-from random import randrange,choice
-from time import sleep
-import requests
-import keyboard
-import asyncio
-from pyppeteer import launch
+from PIL import Image #for editing/splicing images
+from random import randrange,choice #for random skin generation
+from time import sleep #for cooldowns
+import requests #for api reqwuests to change skin/auth
+import asyncio #for pyppeteer browser
+from pyppeteer import launch #for automated web browser to cache NameMC skins
 
 #prompt user for information on the account
 #asks them for:
