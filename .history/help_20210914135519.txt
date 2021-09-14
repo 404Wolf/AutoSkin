@@ -1,0 +1,2 @@
+Set the "image.png" to be a 72x24 image, and then run "main.py"
+To run "main.py," p 

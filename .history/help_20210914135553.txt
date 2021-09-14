@@ -1,4 +1,4 @@
-How to use:
+
 
 Set the "image.png" to be a 72x24 image, and then run "main.py"
 
