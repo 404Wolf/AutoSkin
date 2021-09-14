@@ -1,5 +1,5 @@
 import skinApply #to send requests to mojang's api to skin change
-from skinGen import skinGen #skin gen script, to generate skins from the image
+import skinGen #skin gen script, to generate skins from the image
 from time import sleep #import sleep from time, to add cooldowns
 from requests import post #to make skin change requests
 from keyboard import press_and_release,is_pressed #simulate control+r presses
@@ -44,7 +44,12 @@ def promptUser():
             print(f"{Fore.RED}Please try again, the options are \"slim\" or \"classic\".{Fore.GREEN}")
 
     #confirm the user's choices
-    print(f"{Fore.YELLOW}Setting up auto-apply bot with email {Fore.BLUE}\"{email}\"{Fore.YELLOW}...\n")
+    print(f"{Fore.YELLOW}Setting up auto-apply bot with email \""+email+"\"...\n")
+    print(f"{Fore.YELLOW}Once started, your browswer will open, to cache skins on NameMC")
+    print(f"{Fore.YELLOW}DO {Fore.RED}NOT USE YOUR PC while the skins are being applied.")
+    print(f"{Fore.YELLOW}This process will take 4-8 minutes or so.")
+    print(f"{Fore.YELLOW}To stop the program at any point, press control+space\n")
+    input(f"{Fore.YELLOW}Press {Fore.BLUE}[Enter]{Fore.YELLOW} to start{Fore.GREEN}")
 
 #auth an account
 #requires email+password of the account, and works for microsoft or mojang accounts
@@ -85,30 +90,6 @@ def check_exit():
 
 #open the namemc profile in a new window, and bring it to the top of the screen
 open('http://namemc.com/profile/'+ign.lower(),new=1,autoraise=True)
-
-skinGen()
-
-print(f"{Fore.YELLOW}Would you like the bot to apply your skins?{Fore.GREEN}")
-while True:
-    apply_skins = input("> ")
-    if apply_skins == "n":
-        apply_skins = False
-        break
-    elif apply_skins == "y":
-        apply_skins = True
-        break
-    else:
-        print(f"{Fore.RED}Make sure to only enter {Fore.BLUE}\"y\"{Fore.YELLOW} or {Fore.BLUE}\"n\"{Fore.GREEN}")
-
-if apply_skins:
-    print(f"{Fore.YELLOW}Once started, your browswer will open, to cache skins on NameMC")
-    print(f"{Fore.RED}DO NOT{Fore.YELLOW} USE YOUR PC while the skins are being applied.")
-    print(f"{Fore.YELLOW}This process will take 4-8 minutes or so.")
-    print(f"{Fore.YELLOW}To stop the program at any point, press control+space\n")
-    input(f"{Fore.YELLOW}Press {Fore.BLUE}[Enter]{Fore.YELLOW} to start{Fore.GREEN}")
-else:
-    print(f"{fore.RED}Exiting...")
-    exit()
 
 for skin in range(27):
     skin += 1 #increase by 1 since range() is index 0

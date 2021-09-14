@@ -93,10 +93,8 @@ while True:
     apply_skins = input("> ")
     if apply_skins == "n":
         apply_skins = False
-        break
     elif apply_skins == "y":
         apply_skins = True
-        break
     else:
         print(f"{Fore.RED}Make sure to only enter {Fore.BLUE}\"y\"{Fore.YELLOW} or {Fore.BLUE}\"n\"{Fore.GREEN}")
 
@@ -107,8 +105,7 @@ if apply_skins:
     print(f"{Fore.YELLOW}To stop the program at any point, press control+space\n")
     input(f"{Fore.YELLOW}Press {Fore.BLUE}[Enter]{Fore.YELLOW} to start{Fore.GREEN}")
 else:
-    print(f"{fore.RED}Exiting...")
-    exit()
+    print(f"")
 
 for skin in range(27):
     skin += 1 #increase by 1 since range() is index 0

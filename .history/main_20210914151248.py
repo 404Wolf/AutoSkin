@@ -93,7 +93,6 @@ while True:
     apply_skins = input("> ")
     if apply_skins == "n":
         apply_skins = False
-        break
     elif apply_skins == "y":
         apply_skins = True
         break

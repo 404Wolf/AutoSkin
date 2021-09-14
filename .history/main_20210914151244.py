@@ -93,10 +93,8 @@ while True:
     apply_skins = input("> ")
     if apply_skins == "n":
         apply_skins = False
-        break
     elif apply_skins == "y":
         apply_skins = True
-        break
     else:
         print(f"{Fore.RED}Make sure to only enter {Fore.BLUE}\"y\"{Fore.YELLOW} or {Fore.BLUE}\"n\"{Fore.GREEN}")
 

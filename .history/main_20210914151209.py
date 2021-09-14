@@ -93,23 +93,10 @@ while True:
     apply_skins = input("> ")
     if apply_skins == "n":
         apply_skins = False
-        break
     elif apply_skins == "y":
         apply_skins = True
-        break
     else:
         print(f"{Fore.RED}Make sure to only enter {Fore.BLUE}\"y\"{Fore.YELLOW} or {Fore.BLUE}\"n\"{Fore.GREEN}")
-
-if apply_skins:
-    print(f"{Fore.YELLOW}Once started, your browswer will open, to cache skins on NameMC")
-    print(f"{Fore.RED}DO NOT{Fore.YELLOW} USE YOUR PC while the skins are being applied.")
-    print(f"{Fore.YELLOW}This process will take 4-8 minutes or so.")
-    print(f"{Fore.YELLOW}To stop the program at any point, press control+space\n")
-    input(f"{Fore.YELLOW}Press {Fore.BLUE}[Enter]{Fore.YELLOW} to start{Fore.GREEN}")
-else:
-    print(f"{fore.RED}Exiting...")
-    exit()
-
 for skin in range(27):
     skin += 1 #increase by 1 since range() is index 0
 
