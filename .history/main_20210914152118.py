@@ -8,8 +8,6 @@ from MsAuth import login #for logging into microsoft accounts
 from colorama import Fore,init
 init() #activate colorama
 
-print(f"{Fore.YELLOW}Generating skins...")
-
 ign = None #ign will later be stored in this variable
 
 #prompt the user to set up the variables
@@ -43,10 +41,10 @@ def promptUser():
             break
         else:
             #if it isn't, have them try again
-            print(f"{Fore.RED}Please try again, the options are {Fore.CYAN}\"slim\"{Fore.RED} or {Fore.CYAN}\"classic\"{Fore.RED}.{Fore.GREEN}")
+            print(f"{Fore.RED}Please try again, the options are \"slim\" or \"classic\".{Fore.GREEN}")
 
     #confirm the user's choices
-    print(f"{Fore.YELLOW}Setting up auto-apply bot with email {Fore.CYAN}\"{email}\"{Fore.YELLOW}...")
+    print(f"{Fore.YELLOW}Setting up auto-apply bot with email {Fore.CYAN}\"{email}\"{Fore.YELLOW}...\n")
 
 #auth an account
 #requires email+password of the account, and works for microsoft or mojang accounts
@@ -92,7 +90,7 @@ while True:
 if apply_skins:
     promptUser()
     print()
-    print(f"{Fore.YELLOW}Once started, your browswer will open, to cache skins on NameMC")
+    print(f"{Fore.YELLOW}\nOnce started, your browswer will open, to cache skins on NameMC")
     print(f"{Fore.RED}DO NOT{Fore.YELLOW} USE YOUR PC while the skins are being applied.")
     print(f"{Fore.YELLOW}This process will take 4-8 minutes or so.")
     print(f"{Fore.YELLOW}To stop the program at any point, press control+space\n{Fore.GREEN}")

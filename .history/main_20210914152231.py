@@ -92,7 +92,7 @@ while True:
 if apply_skins:
     promptUser()
     print()
-    print(f"{Fore.YELLOW}Once started, your browswer will open, to cache skins on NameMC")
+    print(f"{Fore.YELLOW}\nOnce started, your browswer will open, to cache skins on NameMC")
     print(f"{Fore.RED}DO NOT{Fore.YELLOW} USE YOUR PC while the skins are being applied.")
     print(f"{Fore.YELLOW}This process will take 4-8 minutes or so.")
     print(f"{Fore.YELLOW}To stop the program at any point, press control+space\n{Fore.GREEN}")
