@@ -1,6 +1,6 @@
 from PIL import Image
 
-def genSkins():
+def skinGen():
     main_image = Image.open("image.png")
 
     if main_image._size != (72,24):
@@ -50,5 +50,3 @@ def genSkins():
         base_skin.paste(splice,(8,8,16,16))
         base_skin.save(f"output/{num}.png")
         num += 1
-
-genSkins()
