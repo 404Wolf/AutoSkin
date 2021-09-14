@@ -77,7 +77,7 @@ print(f"{Fore.GREEN}Skins succesfully generated! They can be found in the {Fore.
 
 print(f"{Fore.YELLOW}Would you like the bot to apply your skins? (y/n){Fore.GREEN}")
 while True:
-    apply_skins = input("> ").lower()
+    apply_skins = input("> ")
     if apply_skins == "n":
         apply_skins = False
         break

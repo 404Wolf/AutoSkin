@@ -77,7 +77,7 @@ print(f"{Fore.GREEN}Skins succesfully generated! They can be found in the {Fore.
 
 print(f"{Fore.YELLOW}Would you like the bot to apply your skins? (y/n){Fore.GREEN}")
 while True:
-    apply_skins = input("> ").lower()
+    apply_skins = input("> ")
     if apply_skins == "n":
         apply_skins = False
         break
@@ -95,7 +95,7 @@ if apply_skins:
     input(f"{Fore.YELLOW}Press {Fore.CYAN}[Enter]{Fore.YELLOW} to start{Fore.GREEN}")
 else:
     print(f"{Fore.YELLOW}To manually apply skins, make sure to apply from 27 down, and make sure to reload the NameMC profile so they cache.{Fore.GREEN}")
-    sleep(.7)
+    
     print(f"{Fore.RED}Exiting...")
     exit()
 
