@@ -44,8 +44,9 @@ def promptUser():
     #confirm the user's choices
     print("Setting up auto-apply bot with email \""+email+"\"...\n")
     print("Once started, your browswer will open, to cache skins on NameMC")
-    print("DO NOT USE YOUR PC while the skins are being applied.")
-    print("This process will take 4-8 minutes or so.")
+    print("Do not use your PC while the skins are being applied.")
+    print("This process will take 5-10 minutes or so.")
+    print("\nThis program will simulate control+r keypresses.")
     print("To stop the program at any point, press control+space\n")
     input("Press [Enter] to start")
 
