@@ -1,5 +1,5 @@
 # AutoSkin
-### Automatically generate, apply, and add to NameMC, skinart.
+#### Automatically generate, apply, and add to NameMC, skinart.
 
 # How to use:
 
