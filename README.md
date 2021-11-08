@@ -1,5 +1,6 @@
 # AutoSkin
 #### Automatically generate, apply, and add to NameMC, skinart.
+NameMC displays your skin history in a grid form, in order of history of skins. This bot can generate skins for you from an image, and then apply them, to create an image from the grid of skin history.
 
 # How to use:
 
