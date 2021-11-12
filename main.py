@@ -1,9 +1,5 @@
 import skinApply #to send requests to mojang's api to skin change
 from skinGen import skinGen #skin gen script, to generate skins from the image
-from time import sleep #import sleep from time, to add cooldowns
-from requests import post #to make skin change requests
-from keyboard import press_and_release,is_pressed #simulate control+r presses
-from webbrowser import open #for opening the namemc profile in a browser
 from MsAuth import login #for logging into microsoft accounts
 from colorama import Fore,init
 init() #activate colorama
