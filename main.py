@@ -114,10 +114,11 @@ def check_exit():
 #open the namemc profile in a new window, and bring it to the top of the screen
 open('http://namemc.com/profile/'+ign.lower(),new=1,autoraise=True)
 
+bearer = auth(email,password) #obtain a bearer
+
 for skin in range(27):
     skin += 1 #increase by 1 since range() is index 0
 
-    bearer = auth(email,password) #obtain a bearer
     skinApply.changeSkin(style,skin,bearer) #use bearer to change skin
 
     for x in range(300): #sleep for 3 seconds
